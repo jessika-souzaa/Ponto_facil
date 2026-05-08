@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<h2>Relatório de Funcionários</h2>
+
+<form method="POST">
+
+<label>Selecionar funcionário</label>
+
+<br><br>
+
+<select name="usuario">
+
+{% for f in funcionarios %}
+
+<option value="{{ f[1] }}">{{ f[0] }}</option>
+
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<button type="submit">Ver registros</button>
+
+</form>
+
+{% endblock %}

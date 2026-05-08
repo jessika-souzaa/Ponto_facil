@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Histórico</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Histórico de Registros</h1>
+
+<table>
+<tr>
+<th>Data</th>
+<th>Hora</th>
+<th>Tipo</th>
+</tr>
+
+{% for registro in registros %}
+<tr>
+<td>{{ registro[0] }}</td>
+<td>{{ registro[1] }}</td>
+<td>{{ registro[2] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<a class="voltar" href="/painel">Voltar ao painel</a>
+
+</div>
+
+</body>
+</html>

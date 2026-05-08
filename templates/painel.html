@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Painel - Ponto Fácil</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="home-container">
+
+<div class="card">
+
+<h1>Painel do Sistema</h1>
+
+<form action="/entrada" class="form-botao">
+<button class="btn" type="submit">Registrar Entrada</button>
+</form>
+
+<form action="/saida" class="form-botao">
+<button class="btn" type="submit">Registrar Saída</button>
+</form>
+
+<form action="/historico" class="form-botao">
+<button class="btn" type="submit">Ver Histórico</button>
+</form>
+
+<a class="link" href="/logout">Sair</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

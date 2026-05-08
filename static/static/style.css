@@ -1,0 +1,67 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#4facfe,#00f2fe);
+}
+
+/* Centralização da tela */
+.home-container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Card principal */
+.card{
+    background:white;
+    padding:100px;
+    border-radius:120px;
+    text-align:center;
+    width:420px;
+    box-shadow:0 100px 300px rgba(0,0,0,0.2);
+}
+ 
+/* Título */
+h1{
+    margin-bottom:30px;
+    font-size:30px;
+}
+
+/* Botão moderno */
+.btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#4facfe;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#2f8cff;
+    transform:scale(1.03);
+}
+
+/* Espaço grande entre botões */
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+}
+
+/* Link sair */
+.link{
+    display:block;
+    margin-top:40px;
+    color:#4facfe;
+    text-decoration:none;
+    font-size:15px;
+}
+
+.form-botao{
+    margin-bottom:30px;
+}
