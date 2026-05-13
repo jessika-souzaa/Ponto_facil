@@ -80,7 +80,6 @@ def painel():
 
 @app.route("/entrada")
 def entrada():
-
     if "usuario" not in session:
         return redirect("/login")
 
@@ -90,21 +89,18 @@ def entrada():
 
     conexao = conectar()
     cursor = conexao.cursor()
-
     cursor.execute(
         "INSERT INTO pontos (usuario, data, hora, tipo) VALUES (?, ?, ?, ?)",
         (usuario, data, hora, "entrada")
     )
-
     conexao.commit()
     conexao.close()
 
-    return "Entrada registrada com sucesso"
+    return redirect("/sucesso/entrada")
 
 
 @app.route("/saida")
 def saida():
-
     if "usuario" not in session:
         return redirect("/login")
 
@@ -114,16 +110,21 @@ def saida():
 
     conexao = conectar()
     cursor = conexao.cursor()
-
     cursor.execute(
         "INSERT INTO pontos (usuario, data, hora, tipo) VALUES (?, ?, ?, ?)",
         (usuario, data, hora, "saida")
     )
-
     conexao.commit()
     conexao.close()
 
-    return redirect("/painel")
+    return redirect("/sucesso/saida")
+
+
+@app.route("/sucesso/<tipo>")
+def sucesso(tipo):
+    if "usuario" not in session:
+        return redirect("/login")
+    return render_template("sucesso.html", tipo=tipo)
 
 
 @app.route("/historico")

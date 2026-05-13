@@ -65,3 +65,54 @@ h1{
 .form-botao{
     margin-bottom:30px;
 }
+/* Histórico */
+body {
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+.container {
+    width: 650px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+th {
+    background-color: #2d6cdf;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 15px;
+}
+
+td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f5ff;
+}
+
+tr:hover {
+    background-color: #dceeff;
+}
+
+.voltar {
+    display: inline-block;
+    margin-top: 10px;
+    color: #2d6cdf;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}

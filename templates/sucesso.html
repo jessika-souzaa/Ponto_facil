@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sucesso - Ponto Fácil</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="home-container">
+  <div class="card">
+
+    <div class="sucesso-icone">✅</div>
+
+    <h1>{{ tipo.capitalize() }} registrada com sucesso!</h1>
+
+    <a href="/painel" class="btn" style="display:block; text-decoration:none; margin-top:20px;">
+      Voltar ao Painel
+    </a>
+
+  </div>
+</div>
+
+</body>
+</html>
