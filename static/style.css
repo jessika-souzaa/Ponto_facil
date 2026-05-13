@@ -25,7 +25,7 @@ form{
     margin-bottom:15px;
 }
 
-button{
+button:not(.btn-buscar){
     width:100%;
     padding:14px;
     border:none;
@@ -132,4 +132,60 @@ tr:hover {
 
 .voltar:hover {
     text-decoration: underline;
+}
+
+.filtro-form {
+    margin-bottom: 24px;
+}
+
+.filtro-campos {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 12px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filtro-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filtro-grupo label {
+    font-size: 13px;
+    color: #555;
+    font-weight: bold;
+    text-align: left;
+}
+
+.filtro-grupo input {
+    padding: 10px 12px;
+    border: 1.5px solid #c5d8f5;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    width: 140px;
+}
+
+.filtro-grupo input:focus {
+    border-color: #2d6cdf;
+}
+
+.btn-buscar {
+    width: auto !important;
+    padding: 10px 24px !important;
+    background: #2d6cdf;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-buscar:hover {
+    background: #1c4fb8;
 }

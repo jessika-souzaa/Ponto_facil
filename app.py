@@ -134,6 +134,8 @@ def historico():
         return redirect("/login")
 
     usuario = session["usuario"]
+    data_inicio = request.args.get("data_inicio")
+    data_fim = request.args.get("data_fim")
 
     conexao = conectar()
     cursor = conexao.cursor()
@@ -142,11 +144,20 @@ def historico():
         "SELECT data, hora, tipo FROM pontos WHERE usuario=? ORDER BY id DESC",
         (usuario,)
     )
-
-    registros = cursor.fetchall()
+    todos = cursor.fetchall()
     conexao.close()
 
-    return render_template("historico.html", registros=registros)
+    if data_inicio and data_fim:
+        di = datetime.strptime(data_inicio, "%Y-%m-%d")
+        df = datetime.strptime(data_fim, "%Y-%m-%d")
+        registros = [
+            r for r in todos
+            if di <= datetime.strptime(r[0], "%d/%m/%Y") <= df
+        ]
+    else:
+        registros = todos
+
+    return render_template("historico.html", registros=registros, data_inicio=data_inicio or "", data_fim=data_fim or "")
 
 
 @app.route("/logout")

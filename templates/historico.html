@@ -9,26 +9,42 @@
 
 <div class="container">
 
-<h1>Histórico de Registros</h1>
+  <h1>Histórico de Registros</h1>
 
-<table>
-<tr>
-<th>Data</th>
-<th>Hora</th>
-<th>Tipo</th>
-</tr>
+  <form method="GET" action="/historico" class="filtro-form">
+    <div class="filtro-campos">
+      <div class="filtro-grupo">
+        <label>De</label>
+        <input type="text" name="data_inicio" placeholder="dd/mm/aaaa"
+               pattern="\d{2}/\d{2}/\d{4}" value="{{ data_inicio }}"
+               onfocus="this.type='date'" onblur="if(!this.value) this.type='text'">
+      </div>
+      <div class="filtro-grupo">
+        <label>Até</label>
+        <input type="text" name="data_fim" placeholder="dd/mm/aaaa"
+               pattern="\d{2}/\d{2}/\d{4}" value="{{ data_fim }}"
+               onfocus="this.type='date'" onblur="if(!this.value) this.type='text'">
+      </div>
+      <button type="submit" class="btn-buscar">Buscar</button>
+    </div>
+  </form>
 
-{% for registro in registros %}
-<tr>
-<td>{{ registro[0] }}</td>
-<td>{{ registro[1] }}</td>
-<td>{{ registro[2] }}</td>
-</tr>
-{% endfor %}
+  <table>
+    <tr>
+      <th>Data</th>
+      <th>Hora</th>
+      <th>Tipo</th>
+    </tr>
+    {% for registro in registros %}
+    <tr>
+      <td>{{ registro[0] }}</td>
+      <td>{{ registro[1] }}</td>
+      <td>{{ registro[2] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
 
-</table>
-
-<a class="voltar" href="/painel">Voltar ao painel</a>
+  <a class="voltar" href="/painel">Voltar ao painel</a>
 
 </div>
 
